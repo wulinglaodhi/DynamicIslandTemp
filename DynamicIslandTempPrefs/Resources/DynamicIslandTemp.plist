@@ -1,0 +1,8 @@
+{
+    entry = {
+        bundle = "DynamicIslandTempPrefs";
+        cell = PSLinkCell;
+        detail = "DynamicIslandTempPrefsListController";
+        label = "DynamicIslandTemp";
+    };
+}
