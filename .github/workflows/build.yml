@@ -5,24 +5,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Theos dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y git perl libxml2-dev build-essential ldid
-
       - name: Setup Theos
-        run: |
-          git clone --recursive https://github.com/theos/theos.git ~/theos
-          echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+        uses: theos/setup-theos@main
 
-      - name: Build deb package
+      - name: Build
         run: make package
 
-      - name: Upload artifact
+      - name: Upload deb
         uses: actions/upload-artifact@v4
         with:
           name: TweakDeb
