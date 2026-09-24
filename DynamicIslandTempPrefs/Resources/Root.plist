@@ -1,0 +1,71 @@
+{
+    title = "DynamicIslandTemp";
+
+    icon = "";
+
+    items = (
+
+        {
+            cell = PSGroupCell;
+            label = "DynamicIslandTemp";
+        },
+
+        {
+            cell = PSSwitchCell;
+            default = YES;
+            key = "Enabled";
+            label = "启用温度显示";
+        },
+
+        {
+            cell = PSSliderCell;
+            default = 150;
+            key = "IslandWidth";
+            min = 90;
+            max = 320;
+            label = "灵动岛宽度";
+        },
+
+        {
+            cell = PSSliderCell;
+            default = 15;
+            key = "FontSize";
+            min = 8;
+            max = 32;
+            label = "温度字体大小";
+        },
+
+        {
+            cell = PSSliderCell;
+            default = 0;
+            key = "OffsetX";
+            min = -80;
+            max = 80;
+            label = "水平位置";
+        },
+
+        {
+            cell = PSSliderCell;
+            default = 0;
+            key = "OffsetY";
+            min = -10;
+            max = 50;
+            label = "垂直位置";
+        },
+
+        {
+            cell = PSSliderCell;
+            default = 2;
+            key = "RefreshInterval";
+            min = 1;
+            max = 30;
+            label = "刷新间隔（秒）";
+        },
+
+        {
+            cell = PSGroupCell;
+            footerText = "温度来自系统 AppleSmartBattery 温度传感器。此插件主要针对带有灵动岛的设备设计。";
+        }
+
+    );
+}
