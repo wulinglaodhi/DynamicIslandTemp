@@ -8,10 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install Theos dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y git perl libxml2-dev build-essential ldid
+
       - name: Setup Theos
-        uses: theos/setup-theos@v1
-      - name: Build package
+        run: |
+          git clone --recursive https://github.com/theos/theos.git ~/theos
+          echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+
+      - name: Build deb package
         run: make package
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
