@@ -1,0 +1,9 @@
+Package: com.hello.dynamicislandtemp
+Name: DynamicIslandTemp
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: 常驻灵动岛显示设备温度，支持 Rootless / RootHide
+Maintainer: Hello
+Author: Hello
+Section: Tweaks
+Depends: mobilesubstrate
